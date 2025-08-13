@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="main-content">
+    <h1>Smart Test Case Generator</h1>
+    <p class="description">
+        Enter your business requirements below and generate test cases using AI.
+    </p>
+    
+    <div class="form-group">
+        <label for="requirements">Business Requirements:</label>
+        <textarea 
+            id="requirements" 
+            name="requirements" 
+            placeholder="Enter your business requirements here...&#10;Example: Create a web scraper that extracts product information from an e-commerce website&#10;Or: Automate form filling for customer registration process"
+        ></textarea>
+    </div>
+    
+    <div class="button-group">
+        <button class="generate-btn" onclick="generateCommand()">Generate</button>
+        <button class="clear-btn" onclick="clearForm()">Clear</button>
+    </div>
+    
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+        <p>Generating browser automation command...</p>
+    </div>
+    
+    <div id="status" class="status"></div>
+    
+    <div id="output" class="output"></div>
+</div>
+{% endblock %}
